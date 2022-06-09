@@ -6,11 +6,13 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:10:00 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/02 20:37:28 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:48:47 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memcpy(void *dst, const void* src, unsigned int n)
+#include "libft.h"
+
+void *ft_memcpy(void *dst, const void* src, size_t n)
 {
 	char		*p_dst;
 	const char	*p_src;

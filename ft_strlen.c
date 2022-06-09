@@ -6,11 +6,9 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 21:42:28 by iuturano          #+#    #+#             */
-/*   Updated: 2022/05/10 22:09:48 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:37:22 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_strlen(char *str)
 {
