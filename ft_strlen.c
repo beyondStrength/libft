@@ -6,11 +6,13 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 21:42:28 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/08 20:37:22 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/11 22:13:54 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int	len;
 

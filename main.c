@@ -6,7 +6,7 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 19:40:58 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/09 00:35:53 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/11 22:25:46 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,52 @@ int main(void)
 	printf("\n%c, %c\n", ft_tolower('1'), ft_tolower('A'));
 
 	//STRCHR
-	char strchr_ex[] = "there is a K in the string?";
-	printf("\n%s\n", ft_strchr(strchr_ex, 'K'));
+	char strchr_ex[] = "a\0";
+	printf("\n%s\n", ft_strchr(strchr_ex, '\0'));
 
 	//STRRCHR
-	char strrchr_ex[] = "there is a K in the but there is another K in the string?";
-	printf("\n%s\n", ft_strrchr(strrchr_ex, 'K'));
+	char strrchr_ex[] = "a\0";
+	printf("\n%s\n", ft_strrchr(strrchr_ex, '\0'));
+
+	//STRNCMP
+	char hello[20] = "Hello World!";
+	char world[20] = "Hello";
+	printf("\nstrncmp test:\n");
+	if (ft_strncmp(hello, world, 11) == 32)
+		printf("works!!\n");
+	else
+		printf("not working...\n");
+
+	//MEMCHR
+	char c = 'e';
+	printf("\nmemchr test:\nresulting string of memchr(\"Hello World!\", 'e', 3):\n%s\n", ft_memchr(hello, c, 3));
+
+	//MEMCMP
+	printf("\nmemcmp test:\n");
+	if (ft_memcmp(hello, world, 11) == 32)
+		printf("works!!\n");
+	else
+		printf("not working...\n");
+
+	//STRNSTR
+	char a[31] = {"see FF your FF return FF now FF"};
+    char b[3] = {"FF"};
+
+	printf("\nstrnstr test: There is \"that string\" inside this one\n%s\n", strnstr(a, b, 31));
+	printf("\nstrnstr test: There is \"that string\" inside this one\n%s\n", ft_strnstr(a, b, 31));
+
+	//ATOI
+	char s[] = "  ---+--+1234ab567";
+	printf("\natoi test: \"  ---+--+1234ab567\"\n");
+	printf("%d\n\n", ft_atoi(s));
+
+	//CALLOC
+	char *ptr;
+	ptr = ft_calloc(5, sizeof(char));
+
+	strlcat(ptr, hello, 12);
+	printf("string callocada: %s", ptr);
+
+	//STRDUP
 
 }

@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 21:31:12 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/11 21:37:00 by iuturano         ###   ########.fr       */
+/*   Created: 2022/06/11 19:43:53 by iuturano          #+#    #+#             */
+/*   Updated: 2022/06/11 21:56:47 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_atoi(char *str)
 {
-	char *p_dst;
-	const char *p_src;
+	long long	n;
+	int	sign;
 
-	p_dst = dst;
-	p_src = src;
-	if (!dst && !src)
-		return (0);
-	if (p_dst < p_src)
-		ft_memcpy(dst, src, len);
-	else
+	n = 0;
+	sign = 1;
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+	while (*str == '+' || *str == '-')
 	{
-		p_dst += len - 1;
-		p_src += len - 1;
-		while (len--)
-			*p_dst-- = *p_src--;
+		if (*str == '-')
+			sign *= -1;
+		str++;
 	}
-	return dst;
+	while (*str >= '0' && *str <= '9')
+	{
+		n = (n * 10) + (*str - '0');
+		str++;
+	}
+	return (sign * (int) n);
 }

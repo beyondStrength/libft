@@ -6,7 +6,7 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 23:07:59 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/09 00:37:29 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/11 17:42:41 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 	dst[size_dest + i] = '\0';
 	return (size_dest + size_src);
 }
-
