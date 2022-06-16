@@ -12,7 +12,7 @@
 
 int	ft_atoi(char *str)
 {
-	long long	n;
+	int	n;
 	int	sign;
 
 	n = 0;

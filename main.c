@@ -35,11 +35,6 @@ int main(void)
 	printf("After memmove dest = %s, src = %s\n", dest+2, dest);
 
 	//STRLCPY
-	char *string = "Hello there, Iuri";
-	char buffer[35];
-	int r;
-	r = strlcat(buffer,string,2);
-	printf("\nCopied '%s' into '%s', length %d\n", string, buffer, r);
 
 	//STRLCAT
 	char *string1 = "Hello there, Iuri";
@@ -73,7 +68,7 @@ int main(void)
 
 	//MEMCHR
 	char c = 'e';
-	printf("\nmemchr test:\nresulting string of memchr(\"Hello World!\", 'e', 3):\n%s\n", ft_memchr(hello, c, 3));
+	printf("\nmemchr test:\nresulting string of memchr(\"Hello World!\", 'e', 3):\n%s\n", (char *) ft_memchr(hello, c, 3));
 
 	//MEMCMP
 	printf("\nmemcmp test:\n");
@@ -86,7 +81,6 @@ int main(void)
 	char a[31] = {"see FF your FF return FF now FF"};
     char b[3] = {"FF"};
 
-	printf("\nstrnstr test: There is \"that string\" inside this one\n%s\n", strnstr(a, b, 31));
 	printf("\nstrnstr test: There is \"that string\" inside this one\n%s\n", ft_strnstr(a, b, 31));
 
 	//ATOI
@@ -94,13 +88,9 @@ int main(void)
 	printf("\natoi test: \"  ---+--+1234ab567\"\n");
 	printf("%d\n\n", ft_atoi(s));
 
-	//CALLOC
-	char *ptr;
-	ptr = ft_calloc(5, sizeof(char));
-
-	strlcat(ptr, hello, 12);
-	printf("string callocada: %s", ptr);
-
 	//STRDUP
-
+	char **words;
+	char phrase[] = " hello boyszz z as world";
+	words = ft_split(phrase, ' ');
+	for (int i = 0; i < 6; i++) printf("\n%s\n", words[i]);
 }

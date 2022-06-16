@@ -38,5 +38,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char * dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char * dst, const char * src, size_t dstsize);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *str, int fd);
+void	ft_putendl_fd(char *str, int fd);
+char	**ft_split(const char *s, char c);
 
 #endif
