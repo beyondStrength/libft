@@ -1,65 +1,78 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/16 18:25:20 by iuturano          #+#    #+#             */
+/*   Updated: 2022/06/16 23:33:13 by iuturano         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int		count_words(const char *s, char c)
+static size_t	word_counter(const char *s, char c)
 {
-	char	*p_s;
-	int		word_count;
+	size_t	words;
 
-	p_s = (char *) s;
-	word_count = 1;
-	while (*p_s)
+	words = 1;
+	while (*s)
 	{
-		if (*p_s == c)
-			word_count++;
-		p_s++;
+		if (*s && *s != c && *(s - 1) == c)
+			words++;
+		s++;
 	}
-	return (word_count);
+	return (words);
 }
 
-int		find_bigger(const char *s, char c)
+static int	char_counter(char *s, char c)
 {
-	int		size;
-	char	*p_s;
+	int	size;
 
 	size = 0;
-	p_s = (char *) s;
-	while(*p_s)
+	while (*s && *s != c)
 	{
-		if(*p_s == c)
-		{
-			if (p_s - s > size)
-				size = p_s - s;
-			s = p_s + 1;
-		}
-		p_s++;
+		s++;
+		size++;
 	}
 	return (size);
 }
 
+void	split_split(const char *s, char c, char **s_arr, size_t w_count)
+{
+	size_t	current_word;
+	size_t	i;
+	char	*p_s;
+
+	i = 0;
+	current_word = 0;
+	p_s = (char *) s;
+	while (*p_s && *p_s == c)
+		p_s++;
+	while (w_count--)
+	{
+		if (*p_s && *p_s != c)
+			s_arr[current_word]
+				= (char *) ft_calloc(char_counter(p_s, c), sizeof(char));
+		i = 0;
+		while (*p_s && *p_s != c)
+			s_arr[current_word][i++] = *p_s++;
+		while (*p_s && *p_s == c)
+			p_s++;
+		current_word++;
+	}
+}
+
 char	**ft_split(const char *s, char c)
 {
-	char	**split;
-	char	*p_s;
-	int		word_count;
-	int		word_len;
-	int		i;
+	size_t	words_count;
+	char	**splited_arr;
 
-	word_len = find_bigger(s, c) + 1;
-	word_count = count_words(s, c);
-	split = (char **) ft_calloc (word_count, sizeof(char *));
-	p_s = (char *) s;
-	i = 0;
-	while (ft_strlen(s))
-	{
-		if (!*p_s || *p_s == c)
-		{
-			split[i] = ft_calloc(word_len, sizeof(char));
-			ft_memmove(split[i], s, p_s - s);
-			s = p_s+1;
-			i++;
-		}
-		p_s++;
-	}
-	split[i] = 0;
-	return (split);
+	words_count = word_counter(s, c);
+	splited_arr = (char **) ft_calloc(words_count + 1, sizeof(char *));
+	if (!splited_arr)
+		return (0);
+	split_split(s, c, splited_arr, words_count);
+	return (splited_arr);
 }
