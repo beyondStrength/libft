@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 19:40:58 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/16 21:56:42 by iuturano         ###   ########.fr       */
+/*   Created: 2022/06/19 22:14:33 by iuturano          #+#    #+#             */
+/*   Updated: 2022/06/19 22:48:48 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int main(void)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	//SPLIT
-	printf("\nsplit\n\n");
-	char **words;
-	char phrase[] = "\0hello\0world\0boys";
-	words = ft_split(phrase, '\0');
-	printf("split rodou");
-	for (int i = 0; i < 3; i++)
+	unsigned int	i;
+	char			*mapi;
+
+	mapi = ft_calloc(ft_strlen(s), sizeof(char));
+	if (!mapi)
+		return (0);
+	i = 0;
+	while (s[i])
 	{
-		printf("\nword[%i]: %s\n", i, words[i]);
+		mapi[i] = f(i, s[i]);
+		i++;
 	}
+	mapi[i] = '\0';
+	return (mapi);
 }

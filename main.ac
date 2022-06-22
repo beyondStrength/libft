@@ -1,48 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 18:25:20 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/21 23:57:38 by iuturano         ###   ########.fr       */
+/*   Created: 2022/06/02 19:40:58 by iuturano          #+#    #+#             */
+/*   Updated: 2022/06/21 23:17:29 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-static int	count_words(const char *s, char c)
+char my_func(unsigned int i, char str)
 {
-	int	count;
-
-	if (!*s)
-		return 0;
-	count = 0;
-	while (*s == c)
-		s++;
-	while (*s)
-	{
-		while (*s && *s != c)
-			s++;
-		while (*s && *s == c)
-			s++;
-		count++;
-	}
-	if (count == 0)
-		return (1);
-	return (count);
+ 	printf("My inner function: index = %d and %c\n", i, str);
+ 	return str - 32;
 }
 
-// char	**ft_split(const char *s, char c)
-// {
-// 	char **split;
-
-
-// }
-
-#include <stdio.h>
-int main (void)
+int main(void)
 {
-	printf ("words: %i\n", count_words("  hel l sdasd  sd o  ", ' '));
+	char str[10] = "hello.";
+ 	printf("The result is %s\n", str);
+ 	char *result = ft_strmapi(str, my_func);
+ 	printf("The result is %s\n", result);
 }

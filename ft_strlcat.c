@@ -6,7 +6,7 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 23:07:59 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/11 17:42:41 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/22 00:04:04 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 	size_t	i;
 
 	size_dest = ft_strlen(dst);
-	size_src = ft_strlen((char *)src);
+	size_src = ft_strlen(src);
 	if (dstsize == 0)
 		return (size_src);
 	i = 0;
