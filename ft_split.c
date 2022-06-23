@@ -6,7 +6,11 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:25:20 by iuturano          #+#    #+#             */
+<<<<<<< Updated upstream
 /*   Updated: 2022/06/21 23:57:38 by iuturano         ###   ########.fr       */
+=======
+/*   Updated: 2022/06/22 20:38:02 by iuturano         ###   ########.fr       */
+>>>>>>> Stashed changes
 /*                                                                            */
 /* ************************************************************************** */
 
