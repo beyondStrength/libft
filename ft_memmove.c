@@ -6,7 +6,7 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 21:31:12 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/11 21:37:00 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:26:46 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *p_dst;
-	const char *p_src;
+	char		*p_dst;
+	const char	*p_src;
 
 	p_dst = dst;
 	p_src = src;
@@ -30,5 +30,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		while (len--)
 			*p_dst-- = *p_src--;
 	}
-	return dst;
+	return (dst);
 }

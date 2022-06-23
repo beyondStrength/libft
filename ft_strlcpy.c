@@ -6,13 +6,13 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 22:19:31 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/08 23:08:05 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:32:41 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char * dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	length;
 

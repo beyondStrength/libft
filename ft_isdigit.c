@@ -6,11 +6,11 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 19:59:21 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/02 19:55:41 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:22:54 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c < '0' || c > '9')
 		return (0);

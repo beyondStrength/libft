@@ -6,7 +6,7 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 18:20:38 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/22 20:48:20 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:25:27 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *p_s1;
-	unsigned char *p_s2;
+	unsigned char	*p_s1;
+	unsigned char	*p_s2;
 
 	if (!n)
 		return (0);

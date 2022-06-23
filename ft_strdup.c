@@ -6,7 +6,7 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:26:01 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/22 21:20:42 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:31:53 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char *dup;
-	size_t len;
+	char	*dup;
+	size_t	len;
 
 	len = ft_strlen(s1) + 1;
 	dup = ft_calloc(len, sizeof(char));

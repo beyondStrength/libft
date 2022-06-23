@@ -5,48 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 18:25:20 by iuturano          #+#    #+#             */
-<<<<<<< Updated upstream
-/*   Updated: 2022/06/21 23:57:38 by iuturano         ###   ########.fr       */
-=======
-/*   Updated: 2022/06/22 20:38:02 by iuturano         ###   ########.fr       */
->>>>>>> Stashed changes
+/*   Created: 2022/06/22 21:28:22 by iuturano          #+#    #+#             */
+/*   Updated: 2022/06/22 22:25:59 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(const char *s, char c)
+static size_t	ft_countword(char const *s, char c)
 {
-	int	count;
+	size_t	count;
 
 	if (!*s)
-		return 0;
+		return (0);
 	count = 0;
-	while (*s == c)
-		s++;
 	while (*s)
 	{
-		while (*s && *s != c)
+		while (*s == c)
 			s++;
-		while (*s && *s == c)
+		if (*s)
+			count++;
+		while (*s != c && *s)
 			s++;
-		count++;
 	}
-	if (count == 0)
-		return (1);
 	return (count);
 }
 
-// char	**ft_split(const char *s, char c)
-// {
-// 	char **split;
-
-
-// }
-
-#include <stdio.h>
-int main (void)
+char	**ft_split(char const *s, char c)
 {
-	printf ("words: %i\n", count_words("  hel l sdasd  sd o  ", ' '));
+	char	**split;
+	size_t	word_len;
+	int		i;
+
+	if (!s)
+		return (0);
+	split = (char **) ft_calloc((ft_countword(s, c) + 1), sizeof(char *));
+	if (!split)
+		return (0);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (*s)
+		{
+			if (!ft_strchr(s, c))
+				word_len = ft_strlen(s);
+			else
+				word_len = ft_strchr(s, c) - s;
+			split[i++] = ft_substr(s, 0, word_len);
+			s += word_len;
+		}
+	}
+	return (split);
 }

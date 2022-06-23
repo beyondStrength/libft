@@ -6,13 +6,13 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 23:23:16 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/08 23:24:46 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:35:12 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if(c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 		return (c + 'A' - 'a');
 	return (c);
 }

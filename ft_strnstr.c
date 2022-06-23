@@ -6,7 +6,7 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 18:40:57 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/16 18:32:16 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:33:50 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	needle_len = ft_strlen(p_needle);
 	i = 0;
 	if (ft_strncmp(p_haystack, p_needle, needle_len) == 0)
-		return p_haystack;
+		return (p_haystack);
 	while (*p_haystack)
 	{
-		if (*p_haystack == *p_needle && i + needle_len < len
+		if (*p_haystack == *p_needle && i + needle_len <= len
 			&& ft_strncmp(p_haystack, p_needle, needle_len) == 0)
-				return (p_haystack);
+			return (p_haystack);
 		p_haystack++;
 		i++;
 	}

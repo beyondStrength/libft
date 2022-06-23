@@ -6,13 +6,13 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 21:40:14 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/11 18:16:40 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:20:00 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
 	return (ft_memset(s, '\0', n));
 }

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 19:40:58 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/21 23:17:29 by iuturano         ###   ########.fr       */
+/*   Created: 2022/06/22 23:53:25 by iuturano          #+#    #+#             */
+/*   Updated: 2022/06/22 23:55:29 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-char my_func(unsigned int i, char str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
- 	printf("My inner function: index = %d and %c\n", i, str);
- 	return str - 32;
-}
+	char			*str;
+	unsigned int	i;
 
-int main(void)
-{
-	char str[10] = "hello.";
- 	printf("The result is %s\n", str);
- 	char *result = ft_strmapi(str, my_func);
- 	printf("The result is %s\n", result);
+	str = (char *)s;
+	if (str && f)
+	{
+		i = 0;
+		while (str[i])
+		{
+			(*f)(i, &str[i]);
+			i++;
+		}
+	}
 }

@@ -5,12 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 22:07:23 by iuturano          #+#    #+#             */
-<<<<<<< Updated upstream
-/*   Updated: 2022/06/19 22:15:12 by iuturano         ###   ########.fr       */
-=======
-/*   Updated: 2022/06/22 21:22:10 by iuturano         ###   ########.fr       */
->>>>>>> Stashed changes
+/*   Created: 2022/06/22 21:28:08 by iuturano          #+#    #+#             */
+/*   Updated: 2022/06/23 00:35:36 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +26,14 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *str, int fd);
+void	ft_putendl_fd(char *str, int fd);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+size_t	ft_strlen(const char *str);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
@@ -40,13 +44,8 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
-size_t	ft_strlen(const char *str);
-size_t	ft_strlcpy(char * dst, const char *src, size_t dstsize);
-size_t	ft_strlcat(char * dst, const char * src, size_t dstsize);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *str, int fd);
-void	ft_putendl_fd(char *str, int fd);
-char	**ft_split(const char *s, char c);
+char	*ft_itoa(int n);
+char	**ft_split(const char *s, char charset);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);

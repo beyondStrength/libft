@@ -6,13 +6,13 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 23:27:15 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/08 23:27:33 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:34:59 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	if(c >= 'A' && c <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 		return (c + 'a' - 'A');
 	return (c);
 }

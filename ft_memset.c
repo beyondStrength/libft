@@ -6,15 +6,15 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 21:50:14 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/08 20:48:32 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:23:59 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	char *p_b;
+	char	*p_b;
 
 	p_b = b;
 	while (len--)

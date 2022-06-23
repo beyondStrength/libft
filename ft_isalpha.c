@@ -6,11 +6,11 @@
 /*   By: iuturano <iuriturano@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 19:47:54 by iuturano          #+#    #+#             */
-/*   Updated: 2022/06/02 19:54:52 by iuturano         ###   ########.fr       */
+/*   Updated: 2022/06/23 00:22:16 by iuturano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z'))
 		return (0);
